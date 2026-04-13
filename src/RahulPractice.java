@@ -6,6 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+
 public class RahulPractice {
 
 	
@@ -23,34 +24,46 @@ public class RahulPractice {
 	
 	@Test (priority = 1)
 	public void Login () {
-	 driver.findElement(By.id("inputUsername")).sendKeys("Sarah");	
+	 //driver.findElement(By.id("inputUsername")).sendKeys("Sarah");	
+	 driver.findElement(By.cssSelector("input#inputUsername")).sendKeys("Sarah");
 	 driver.findElement(By.name("inputPassword")).sendKeys("Sarah");
-	 driver.findElement(By.className("signInBtn")).click();
+	 
+	 driver.findElement(By.cssSelector("button.submit.signInBtn")).click();
+	// driver.findElement(By.className("signInBtn")).click();
 	}
 	
 	@Test  (priority = 2)
 	public void incorrectPassandUsernameMsg () {
 		
-		String theErrorText = driver.findElement(By.cssSelector(".error")).getText();
-		System.out.println(theErrorText);
+		
+	//	String msg= driver.findElement(By.cssSelector("p[class = 'error']")).getText();
+	//	System.out.println(msg);
+		
+		
+		String msg = driver.findElement(By.cssSelector(".error")).getText();
+		System.out.println(msg);
 				
 	}
 	
-	@Test (priority = 3) 
+	@Test (priority = 3, enabled = true) 
 	public void forgotPasswordLink () {
 		driver.findElement(By.linkText("Forgot your password?")).click();
 		
 	}
 	
-	@Test (priority = 4)
+	@Test (priority = 4,enabled = true )
 	
 	public void ForgotPasspage () {
 		
-		driver.findElement(By.xpath("//input [@placeholder = 'Name']")).sendKeys("Sarah");
+		//driver.findElement(By.xpath("//input [@placeholder = 'Name']")).sendKeys("Sarah");
+	     driver.findElement(By.xpath("//input [@placeholder = 'Name']")).sendKeys("Test");
 		driver.findElement(By.xpath("//input [@placeholder = 'Email']")).sendKeys("Sarah@gmail.com");
-		//driver.findElement(By.xpath("//input [@placeholder= 'Email']")).clear();
-		driver.findElement(By.xpath("//input [@type= 'text'] [3]")).sendKeys("000");
+		//driver.findElement(By.xpath("//input [@type= 'text'] [3]")).sendKeys("000");
       //  driver.findElement(By.className("go-to-login-btn")).click();
+		driver.findElement(By.xpath("//input[@placeholder ='Phone Number']")).sendKeys("088155887");
+		driver.findElement(By.cssSelector("input[placeholder ='Phone Number']")).clear();
+		
+		
 		}
 	
 	
