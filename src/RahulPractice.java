@@ -6,6 +6,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import net.bytebuddy.build.Plugin.Factory.UsingReflection.Priority;
+
 public class RahulPractice {
 
 	WebDriver driver = new ChromeDriver();
@@ -19,14 +21,20 @@ public class RahulPractice {
 	}
 
 	@Test(priority = 1)
-	public void Login() {
+	public void Login() throws InterruptedException {
 		// driver.findElement(By.id("inputUsername")).sendKeys("Sarah");
-		driver.findElement(By.cssSelector("input#inputUsername")).sendKeys("Rahul");
+		//driver.findElement(By.cssSelector("input#inputUsername")).sendKeys("Rahul");
+		//driver.findElement(By.cssSelector("input[id*= 'input']")).sendKeys("Rahul");
+		driver.findElement(By.xpath("//input[contains(@id,input)]")).sendKeys("Rahul");
 		driver.findElement(By.name("inputPassword")).sendKeys("rahulshettyacademy");
 		driver.findElement(By.cssSelector(".submit.signInBtn")).click();
 
 		//driver.findElement(By.cssSelector("button.submit.signInBtn")).click();
 		 driver.findElement(By.className("signInBtn")).click();
+		 Thread.sleep(2000);
+		 System.out.println(driver.findElement(By.cssSelector("div p")).getText()); 
+		 //Xpath >> //tagname [contains (@attname,staticvalue)]
+		 //css tagname [attname* ='static']
 	}
 
 	@Test(priority = 2, enabled = false)
@@ -70,9 +78,14 @@ public class RahulPractice {
 	System.out.println(infoMsg);
 		
 	
+}
+	
+	@Test (priority = 5, enabled= false) 
+	public void LoginPage ( ) {
 		
 		
 		
 	}
+	
 
 }

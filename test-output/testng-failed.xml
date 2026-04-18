@@ -5,8 +5,8 @@
     <classes>
       <class name="RahulPractice">
         <methods>
+          <include name="Login"/>
           <include name="setUp"/>
-          <include name="ForgotPasspage"/>
         </methods>
       </class> <!-- RahulPractice -->
     </classes>
