@@ -4,7 +4,9 @@ import java.time.Duration;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -13,8 +15,11 @@ import net.bytebuddy.build.Plugin.Factory.UsingReflection.Priority;
 
 public class RahulPractice {
 
+	//WebDriver driver = new ChromeDriver();
 	WebDriver driver = new ChromeDriver();
 	String loginName = "Sarah";
+	methods2 methodsClass = new methods2();
+	
 
 
 	@BeforeTest
@@ -26,19 +31,23 @@ public class RahulPractice {
 	}
 
 	
-	@Test(priority = 2)
+	@Test(priority = 2, enabled = false)
 	public void Login() throws InterruptedException {
 		// driver.findElement(By.id("inputUsername")).sendKeys("Sarah");
 		//driver.findElement(By.cssSelector("input#inputUsername")).sendKeys("Rahul");
 		//driver.findElement(By.cssSelector("input[id*= 'input']")).sendKeys("Rahul");
+		Thread.sleep(2000);
+		driver.findElement(By.id("inputUsername")).sendKeys(loginName);
+		String correctPass = methodsClass.getPassword(driver);
 		
-		driver.findElement(By.xpath("//input[contains(@id,'input')]")).sendKeys(loginName);
-		driver.findElement(By.name("inputPassword")).sendKeys("rahulshettyacademy");
+		
+		driver.findElement(By.name("inputPassword")).sendKeys(correctPass);
+		 Thread.sleep(5000);
 		driver.findElement(By.cssSelector(".submit.signInBtn")).click();
 
 		//driver.findElement(By.cssSelector("button.submit.signInBtn")).click();
-		 driver.findElement(By.className("signInBtn")).click();
-		 Thread.sleep(2000);
+		// driver.findElement(By.className("signInBtn")).click();
+		 Thread.sleep(5000);
 		 System.out.println(driver.findElement(By.cssSelector("div p")).getText()); 
 		 //Xpath >> //tagname [contains (@attname,staticvalue)]
 		 //css tagname [attname* ='static']
@@ -86,17 +95,18 @@ public class RahulPractice {
 	
 }
 	
-	@Test (priority = 6, enabled= true) 
-	public void  PageAfterLogin ( ) {
+	@Test (priority = 6, enabled= false) 
+	public void  PageAfterLogin ( ) throws InterruptedException {
 		
 	String expectedsuccessfulLoginMsg = "You are successfully logged in.";
+	Thread.sleep(3000);
 	String successfulLoginMsg= driver.findElement(By.cssSelector("div p")).getText();
 	Assert.assertEquals(successfulLoginMsg, expectedsuccessfulLoginMsg);
 	
 		
 	}
 	
-  @Test (priority = 7, enabled= true )
+  @Test (priority = 7, enabled= false )
   public void checkTheLoginName () {
 	  
 	  String HelloMsg = driver.findElement(By.cssSelector("div h2 ")).getText();
@@ -108,16 +118,33 @@ public class RahulPractice {
       
       String ExpectedMSG = "Hello "+loginName+",";
 	  Assert.assertEquals(HelloMsg, ExpectedMSG);
-	  	  
-  }
+	  	   }
   
 	
-@Test (priority = 8, enabled = true)
+@Test (priority = 8, enabled =  false)
 public void logoutButton () {
 	driver.findElement(By.xpath("//button [text() = 'Log Out']")).click();
 	
 }
   
-  
+@Test (priority= 8 , enabled = true)
+ public void xpathfromasibling () throws InterruptedException {
+
+	driver.get("https://rahulshettyacademy.com/AutomationPractice/");
+	driver.manage().window().maximize();
+	//driver.navigate().to("https://www.google.com/");
+	//driver.navigate().back();
+	System.out.println(driver.findElement(By.xpath("//div/button[1]/following-sibling::button[1]")).getText()); 
+	
+}
+
+@Test (priority = 9, enabled = true)
+public void xpathSiblingtoParent () {
+	
+WebElement buttonsection =  driver.findElement(By.xpath("//div/button[1]/following-sibling::button[1]/"));
+	
+}
+
+
 	
 }

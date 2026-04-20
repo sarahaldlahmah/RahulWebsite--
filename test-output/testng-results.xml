@@ -1,32 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="3" total="7" passed="4" failed="0" skipped="0">
+<testng-results ignored="7" total="9" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-04-19T01:39:28 EET" name="Default suite" finished-at="2026-04-19T01:40:19 EET" duration-ms="50766">
+  <suite started-at="2026-04-20T20:39:06 EET" name="Default suite" finished-at="2026-04-20T20:39:11 EET" duration-ms="5707">
     <groups>
     </groups>
-    <test started-at="2026-04-19T01:39:28 EET" name="Default test" finished-at="2026-04-19T01:40:19 EET" duration-ms="50766">
+    <test started-at="2026-04-20T20:39:06 EET" name="Default test" finished-at="2026-04-20T20:39:11 EET" duration-ms="5707">
       <class name="RahulPractice">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:RahulPractice@497486b3]" started-at="2026-04-19T01:39:28 EET" name="setUp" finished-at="2026-04-19T01:40:16 EET" duration-ms="47919" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:RahulPractice@6127a7e]" started-at="2026-04-20T20:39:06 EET" name="setUp" finished-at="2026-04-20T20:39:06 EET" duration-ms="669" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="Login()[pri:2, instance:RahulPractice@497486b3]" started-at="2026-04-19T01:40:16 EET" name="Login" finished-at="2026-04-19T01:40:19 EET" duration-ms="2620" status="PASS">
+        <test-method signature="xpathfromasibling()[pri:8, instance:RahulPractice@6127a7e]" started-at="2026-04-20T20:39:06 EET" name="xpathfromasibling" finished-at="2026-04-20T20:39:11 EET" duration-ms="4989" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Login -->
-        <test-method signature="PageAfterLogin()[pri:6, instance:RahulPractice@497486b3]" started-at="2026-04-19T01:40:19 EET" name="PageAfterLogin" finished-at="2026-04-19T01:40:19 EET" duration-ms="31" status="PASS">
+        </test-method> <!-- xpathfromasibling -->
+        <test-method signature="xpathSiblingtoParent()[pri:9, instance:RahulPractice@6127a7e]" started-at="2026-04-20T20:39:11 EET" name="xpathSiblingtoParent" finished-at="2026-04-20T20:39:11 EET" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- PageAfterLogin -->
-        <test-method signature="checkTheLoginName()[pri:7, instance:RahulPractice@497486b3]" started-at="2026-04-19T01:40:19 EET" name="checkTheLoginName" finished-at="2026-04-19T01:40:19 EET" duration-ms="31" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- checkTheLoginName -->
-        <test-method signature="logoutButton()[pri:8, instance:RahulPractice@497486b3]" started-at="2026-04-19T01:40:19 EET" name="logoutButton" finished-at="2026-04-19T01:40:19 EET" duration-ms="108" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- logoutButton -->
+        </test-method> <!-- xpathSiblingtoParent -->
       </class> <!-- RahulPractice -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
