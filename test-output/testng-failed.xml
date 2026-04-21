@@ -5,8 +5,8 @@
     <classes>
       <class name="RahulPractice">
         <methods>
-          <include name="Login"/>
           <include name="setUp"/>
+          <include name="dropdownLists_Passengers"/>
         </methods>
       </class> <!-- RahulPractice -->
     </classes>

@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -127,7 +128,7 @@ public void logoutButton () {
 	
 }
   
-@Test (priority= 8 , enabled = true)
+@Test (priority= 8 , enabled = false)
  public void xpathfromasibling () throws InterruptedException {
 
 	driver.get("https://rahulshettyacademy.com/AutomationPractice/");
@@ -138,12 +139,58 @@ public void logoutButton () {
 	
 }
 
-@Test (priority = 9, enabled = true)
+@Test (priority = 9, enabled = false)
 public void xpathSiblingtoParent () {
 	
 WebElement buttonsection =  driver.findElement(By.xpath("//div/button[1]/following-sibling::button[1]/"));
 	
 }
+
+@Test (priority = 10, enabled = false)
+
+public void dropdownLists_Currency () throws InterruptedException {
+	
+driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
+WebElement staticList = driver.findElement(By.name("ctl00$mainContent$DropDownListCurrency"));
+Select sel = new Select (staticList);
+staticList.click();
+Thread.sleep(1000);
+sel.selectByIndex(0);
+Thread.sleep(1000);
+sel.selectByValue("AED");
+sel.selectByVisibleText("USD");
+
+}
+@Test (priority= 11, enabled = true)
+public void dropdownLists_Passengers() {
+driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
+driver.findElement(By.id("divpaxinfo")).click();
+//for (int i = 1; i<4; i++) {
+//	driver.findElement(By.id("hrefIncAdt")).click();
+//
+//}
+//System.out.println(driver.findElement(By.id("spanAudlt")).getText());
+//
+int i =1;
+while (i<5) {
+	driver.findElement(By.id("hrefIncAdt")).click();
+    i++;   
+}
+driver.findElement(By.id("btnclosepaxoption")).click();
+System.out.println("no. of adults is : "+driver.findElement(By.id("divpaxinfo")).getText());
+	
+}
+
+@Test (priority= 12, enabled = true)
+public void dropdownLists_FromTo () {
+
+driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
+
+	
+	
+	
+}
+
 
 
 	

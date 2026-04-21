@@ -1,24 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="7" total="9" passed="2" failed="0" skipped="0">
+<testng-results ignored="10" total="11" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-04-20T20:39:06 EET" name="Default suite" finished-at="2026-04-20T20:39:11 EET" duration-ms="5707">
+  <suite started-at="2026-04-21T23:05:10 EET" name="Default suite" finished-at="2026-04-21T23:05:35 EET" duration-ms="24814">
     <groups>
     </groups>
-    <test started-at="2026-04-20T20:39:06 EET" name="Default test" finished-at="2026-04-20T20:39:11 EET" duration-ms="5707">
+    <test started-at="2026-04-21T23:05:10 EET" name="Default test" finished-at="2026-04-21T23:05:35 EET" duration-ms="24814">
       <class name="RahulPractice">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:RahulPractice@6127a7e]" started-at="2026-04-20T20:39:06 EET" name="setUp" finished-at="2026-04-20T20:39:06 EET" duration-ms="669" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:RahulPractice@76012793]" started-at="2026-04-21T23:05:10 EET" name="setUp" finished-at="2026-04-21T23:05:13 EET" duration-ms="2954" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="xpathfromasibling()[pri:8, instance:RahulPractice@6127a7e]" started-at="2026-04-20T20:39:06 EET" name="xpathfromasibling" finished-at="2026-04-20T20:39:11 EET" duration-ms="4989" status="PASS">
+        <test-method signature="dropdownLists_Passengers()[pri:11, instance:RahulPractice@76012793]" started-at="2026-04-21T23:05:13 EET" name="dropdownLists_Passengers" finished-at="2026-04-21T23:05:35 EET" duration-ms="21805" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- xpathfromasibling -->
-        <test-method signature="xpathSiblingtoParent()[pri:9, instance:RahulPractice@6127a7e]" started-at="2026-04-20T20:39:11 EET" name="xpathSiblingtoParent" finished-at="2026-04-20T20:39:11 EET" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- xpathSiblingtoParent -->
+        </test-method> <!-- dropdownLists_Passengers -->
       </class> <!-- RahulPractice -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
