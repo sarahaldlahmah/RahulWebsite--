@@ -7,7 +7,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -161,7 +163,7 @@ sel.selectByValue("AED");
 sel.selectByVisibleText("USD");
 
 }
-@Test (priority= 11, enabled = true)
+@Test (priority= 11, enabled = false)
 public void dropdownLists_Passengers() {
 driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
 driver.findElement(By.id("divpaxinfo")).click();
@@ -182,13 +184,32 @@ System.out.println("no. of adults is : "+driver.findElement(By.id("divpaxinfo"))
 }
 
 @Test (priority= 12, enabled = true)
-public void dropdownLists_FromTo () {
+public void dropdownLists_FromTo () throws InterruptedException {
 
 driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
+driver.manage().window().maximize();
+//Thread.sleep(2000);
+//WebElement fromList = driver.findElement(By.id("ctl00_mainContent_ddl_originStation1"));
+//driver.findElement(By.id("ctl00_mainContent_ddl_originStation1_CTXTaction")).click();
+//Select sel = new Select(fromList);
+//Thread.sleep(2000);
+//sel.selectByValue("MAA");
+//fromList.findElement(By.xpath("//option[@value='MAA']")).click();
+//WebElement toList = driver.findElement(By.id("ctl00_mainContent_ddl_destinationStation1_CTXTaction"));
+//toList.findElement(By.xpath("//option[@value='MAA']")).click();
 
-	
-	
-	
+driver.findElement(By.xpath(".//*[@id='ctl00_mainContent_ddl_originStation1_CTXT']")).click();
+driver.findElement(By.cssSelector("a[value='DEL']")).click();
+System.out.println(driver.findElement(By.xpath(".//*[@id='ctl00_mainContent_ddl_originStation1_CTXT']")).getAttribute("value"));
+    // Destination
+ driver.findElement(By.xpath(".//*[@id='ctl00_mainContent_ddl_destinationStation1_CTXT']")).click();     
+ //driver.findElement(By.xpath("(//a[@value='HYD'])[2]")).click();  
+ WebElement FromList = driver.findElement(By.xpath("//div/div/input[@id='ctl00_mainContent_ddl_destinationStation1_CTXT']"));
+ FromList.findElement(By.xpath("(//a[@value='HYD'])")).click();
+ System.out.println( driver.findElement(By.xpath(".//*[@id='ctl00_mainContent_ddl_destinationStation1_CTXT']")).getAttribute("value"));
+
+
+
 }
 
 

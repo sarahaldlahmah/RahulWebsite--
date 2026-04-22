@@ -6,7 +6,7 @@
       <class name="RahulPractice">
         <methods>
           <include name="setUp"/>
-          <include name="dropdownLists_Passengers"/>
+          <include name="dropdownLists_FromTo"/>
         </methods>
       </class> <!-- RahulPractice -->
     </classes>
