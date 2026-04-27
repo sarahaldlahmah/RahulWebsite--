@@ -5,8 +5,8 @@
     <classes>
       <class name="RahulPractice">
         <methods>
+          <include name="suggestiveLists_Country"/>
           <include name="setUp"/>
-          <include name="dropdownLists_FromTo"/>
         </methods>
       </class> <!-- RahulPractice -->
     </classes>

@@ -1,8 +1,11 @@
 import static org.testng.Assert.assertEquals;
 
 import java.time.Duration;
+import java.util.List;
+import java.util.Random;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -183,7 +186,7 @@ System.out.println("no. of adults is : "+driver.findElement(By.id("divpaxinfo"))
 	
 }
 
-@Test (priority= 12, enabled = true)
+@Test (priority= 12, enabled = false)
 public void dropdownLists_FromTo () throws InterruptedException {
 
 driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
@@ -207,12 +210,35 @@ System.out.println(driver.findElement(By.xpath(".//*[@id='ctl00_mainContent_ddl_
  WebElement FromList = driver.findElement(By.xpath("//div/div/input[@id='ctl00_mainContent_ddl_destinationStation1_CTXT']"));
  FromList.findElement(By.xpath("(//a[@value='HYD'])")).click();
  System.out.println( driver.findElement(By.xpath(".//*[@id='ctl00_mainContent_ddl_destinationStation1_CTXT']")).getAttribute("value"));
+}
 
+@Test (priority = 13, enabled= true, invocationCount = 5)
+public void suggestiveLists_Country () throws InterruptedException {
+	
+driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
+driver.manage().window().maximize();
+driver.findElement(By.id("autosuggest")).sendKeys("ind");
+List <WebElement> suggestions =  driver.findElements(By.xpath("//li/a[@class='ui-corner-all']"));
+Random rand = new Random();  
+int random_index = rand.nextInt(suggestions.size());
+if (random_index !=0) {
+	
+	suggestions.get(random_index).click();
+
+}
+else {
+	driver.findElement(By.id("autosuggest")).clear();
+	driver.findElement(By.id("autosuggest")).sendKeys("British Indian Ocean Territory");
+	driver.findElement(By.id("autosuggest")).sendKeys(Keys.ENTER);
 
 
 }
+System.out.println("no is:" + random_index);
+Thread.sleep(3000);
+//System.out.println(suggestions.get(random_index).getText());
 
 
+}
 
 	
 }
