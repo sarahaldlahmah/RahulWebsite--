@@ -185,6 +185,8 @@ while (i<5) {
 }
 driver.findElement(By.id("btnclosepaxoption")).click();
 System.out.println("no. of adults is : "+driver.findElement(By.id("divpaxinfo")).getText());
+assertEquals(driver.findElement(By.id("divpaxinfo")).getText(), "5 Adult");
+
 	
 }
 
@@ -243,7 +245,7 @@ Thread.sleep(3000);
 }
 
 
-@Test (priority = 14, enabled= true)
+@Test (priority = 14, enabled= false)
 public void checkBoxes_test () {
 	
 	driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
@@ -255,11 +257,32 @@ public void checkBoxes_test () {
 	//assertFalse(istheBoxSelected);
 }
 
-@Test (priority = 15, enabled= true)
+@Test (priority = 15, enabled= false)
 public void numberOfCheckBoxes() {
 	
 	List <WebElement> allCheckBoxes =  driver.findElements(By.xpath("//input[@type='checkbox']"));
 	System.out.println(" no. of checkboxes is: " + allCheckBoxes.size());
+	
+}
+
+@Test (priority = 16, enabled = true)
+public void checkboxesassignment () {
+	
+	
+	driver.get("https://rahulshettyacademy.com/AutomationPractice/");
+	driver.findElement(By.id("checkBoxOption1")).click();
+	
+	assertTrue(driver.findElement(By.id("checkBoxOption1")).isSelected());
+	driver.findElement(By.id("checkBoxOption1")).click();
+	assertFalse(driver.findElement(By.id("checkBoxOption1")).isSelected());
+
+	
+}
+@Test (priority = 17, enabled = true)
+public void numberofCheckBoxes () {
+	List <WebElement> alltheCheckBoxes = driver.findElements(By.xpath("//input[@type='checkbox']"));
+	System.out.println("no of checkboxes is : " + alltheCheckBoxes.size());
+	assertEquals(alltheCheckBoxes.size(), 3);
 	
 }
 
