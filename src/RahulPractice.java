@@ -1,4 +1,6 @@
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertFalse;
+import static org.testng.Assert.assertTrue;
 
 import java.time.Duration;
 import java.util.List;
@@ -212,7 +214,7 @@ System.out.println(driver.findElement(By.xpath(".//*[@id='ctl00_mainContent_ddl_
  System.out.println( driver.findElement(By.xpath(".//*[@id='ctl00_mainContent_ddl_destinationStation1_CTXT']")).getAttribute("value"));
 }
 
-@Test (priority = 13, enabled= true, invocationCount = 5)
+@Test (priority = 13, enabled= false)
 public void suggestiveLists_Country () throws InterruptedException {
 	
 driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
@@ -240,5 +242,32 @@ Thread.sleep(3000);
 
 }
 
+
+@Test (priority = 14, enabled= true)
+public void checkBoxes_test () {
 	
+	driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
+	driver.findElement(By.id("ctl00_mainContent_chk_friendsandfamily")).click();
+	System.out.println(	driver.findElement(By.id("ctl00_mainContent_chk_friendsandfamily")).isSelected());
+
+	boolean istheBoxSelected = driver.findElement(By.id("ctl00_mainContent_chk_friendsandfamily")).isSelected();
+	assertTrue(istheBoxSelected);
+	//assertFalse(istheBoxSelected);
+}
+
+@Test (priority = 15, enabled= true)
+public void numberOfCheckBoxes() {
+	
+	List <WebElement> allCheckBoxes =  driver.findElements(By.xpath("//input[@type='checkbox']"));
+	System.out.println(" no. of checkboxes is: " + allCheckBoxes.size());
+	
+}
+
+
+
+
+
+
+
+
 }

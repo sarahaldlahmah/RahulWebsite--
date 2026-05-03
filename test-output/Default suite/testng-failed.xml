@@ -5,7 +5,7 @@
     <classes>
       <class name="RahulPractice">
         <methods>
-          <include name="suggestiveLists_Country"/>
+          <include name="checkBoxes_test"/>
           <include name="setUp"/>
         </methods>
       </class> <!-- RahulPractice -->
