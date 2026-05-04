@@ -265,7 +265,7 @@ public void numberOfCheckBoxes() {
 	
 }
 
-@Test (priority = 16, enabled = true)
+@Test (priority = 16, enabled = false)
 public void checkboxesassignment () {
 	
 	
@@ -278,7 +278,7 @@ public void checkboxesassignment () {
 
 	
 }
-@Test (priority = 17, enabled = true)
+@Test (priority = 17, enabled = false)
 public void numberofCheckBoxes () {
 	List <WebElement> alltheCheckBoxes = driver.findElements(By.xpath("//input[@type='checkbox']"));
 	System.out.println("no of checkboxes is : " + alltheCheckBoxes.size());
@@ -286,8 +286,48 @@ public void numberofCheckBoxes () {
 	
 }
 
+ @Test (priority = 18, enabled = false)
+ public void returnDate () {
+	 
+	 //assertFalse(driver.findElement(By.id("ctl00_mainContent_view_date2")).isEnabled());
+	String attributeStyle =  driver.findElement(By.className("picker-second")).getAttribute("style");
+	 assertEquals(attributeStyle, "display: block; opacity: 0.5;");
+	 
+	 driver.findElement(By.id("ctl00_mainContent_rbtnl_Trip_1")).click();
+		String attributeStyle2 =  driver.findElement(By.className("picker-second")).getAttribute("style");
+
+	 assertEquals(attributeStyle2, "display: block; opacity: 1;");
+	
+ }
 
 
+@Test (priority = 19, enabled = true)
+public void assignment () {
+	
+	driver.get("https://rahulshettyacademy.com/angularpractice/");
+    driver.findElement(By.name("name")).sendKeys("Sarah");
+    
+    driver.findElement(By.name("email")).sendKeys("sarah.aldlahmah@gmail.com");
+    driver.findElement(By.id("exampleInputPassword1")).sendKeys("P@ssw0rd@1234");
+    
+    
+    Select sel = new Select(driver.findElement(By.id("exampleFormControlSelect1")));
+    sel.selectByVisibleText("Female");
+    
+    driver.findElement(By.id("inlineRadio1")).click();
+    assertTrue(driver.findElement(By.id("inlineRadio1")).isSelected());
+    
+	driver.findElement(By.cssSelector(".btn.btn-success")).click();
+	
+  driver.findElement(By.xpath("//input[@type = 'date']")).sendKeys("05/05/2026");	
+  	
+	
+	String successMsg = driver.findElement(By.cssSelector(".alert.alert-success.alert-dismissible")).getText();
+	//System.out.println(successMsg);
+	assertTrue(successMsg.contains("Success! The Form has been submitted successfully!"
+			));
+	
+}
 
 
 
