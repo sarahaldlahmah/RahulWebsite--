@@ -301,7 +301,7 @@ public void numberofCheckBoxes () {
  }
 
 
-@Test (priority = 19, enabled = true)
+@Test (priority = 19, enabled = false)
 public void assignment () {
 	
 	driver.get("https://rahulshettyacademy.com/angularpractice/");
@@ -329,6 +329,28 @@ public void assignment () {
 	
 }
 
+
+@Test (priority = 20, enabled = true)
+public void alerts () throws InterruptedException {
+	
+	String name = "Sarah";
+	driver.get("https://rahulshettyacademy.com/AutomationPractice/");
+	driver.findElement(By.id("name")).sendKeys(name);
+	
+	driver.findElement(By.id("alertbtn")).click();
+	String alertsText = driver.switchTo().alert().getText();
+	assertTrue(alertsText.contains(name));
+	driver.switchTo().alert().accept();
+
+	driver.findElement(By.id("confirmbtn")).click();	
+	driver.switchTo().alert().dismiss();
+	
+	
+	
+	
+	
+	
+}
 
 
 
