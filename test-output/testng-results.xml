@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-05-21T02:04:05 EET" name="Default suite" finished-at="2026-05-21T02:04:21 EET" duration-ms="15322">
+  <suite started-at="2026-05-24T02:18:12 EET" name="Default suite" finished-at="2026-05-24T02:18:22 EET" duration-ms="9483">
     <groups>
     </groups>
-    <test started-at="2026-05-21T02:04:05 EET" name="Default test" finished-at="2026-05-21T02:04:21 EET" duration-ms="15322">
-      <class name="Explicitwaitpractice">
-        <test-method is-config="true" signature="setup()[pri:0, instance:Explicitwaitpractice@402bba4f]" started-at="2026-05-21T02:04:05 EET" name="setup" finished-at="2026-05-21T02:04:10 EET" duration-ms="4448" status="PASS">
+    <test started-at="2026-05-24T02:18:12 EET" name="Default test" finished-at="2026-05-24T02:18:22 EET" duration-ms="9483">
+      <class name="FluentWit">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:FluentWit@4ce7fffa]" started-at="2026-05-24T02:18:12 EET" name="setUp" finished-at="2026-05-24T02:18:16 EET" duration-ms="3134" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="login()[pri:1, instance:Explicitwaitpractice@402bba4f]" started-at="2026-05-21T02:04:10 EET" name="login" finished-at="2026-05-21T02:04:21 EET" duration-ms="10822" status="PASS">
+        </test-method> <!-- setUp -->
+        <test-method signature="isHellodisplayed()[pri:0, instance:FluentWit@4ce7fffa]" started-at="2026-05-24T02:18:16 EET" name="isHellodisplayed" finished-at="2026-05-24T02:18:22 EET" duration-ms="6300" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- login -->
-      </class> <!-- Explicitwaitpractice -->
+        </test-method> <!-- isHellodisplayed -->
+      </class> <!-- FluentWit -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -22,7 +22,6 @@ public class Explicitwaitpractice {
     @BeforeTest
     public void setup() {
 
-        // ✅ All of this must be INSIDE a method
         ChromeOptions options = new ChromeOptions();
         Map<String, Object> prefs = new HashMap<>();
         prefs.put("credentials_enable_service", false);
@@ -37,7 +36,7 @@ public class Explicitwaitpractice {
         driver.manage().window().maximize();
     }
 
-    @Test(priority = 1, enabled = true)
+    @Test(priority = 1, enabled = false)
     public void login() throws InterruptedException {
 
         driver.findElement(By.id("username")).sendKeys("rahulshettyacademy");
@@ -45,7 +44,7 @@ public class Explicitwaitpractice {
         Select sel = new Select(driver.findElement(By.cssSelector("select.form-control")));
         sel.selectByValue("consult");
         driver.findElement(By.id("terms")).click();
-        WebElement userType = driver.findElement(By.className("customradio"));
+     //   WebElement userType = driver.findElement(By.className("customradio"));
         driver.findElement(By.cssSelector("input[value='user']")).click();
         w.until(ExpectedConditions.visibilityOfElementLocated(By.id("okayBtn")));
         driver.findElement(By.id("okayBtn")).click();
@@ -55,7 +54,6 @@ public class Explicitwaitpractice {
      //   w.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.cssSelector(".btn.btn-info")));
         w.until(ExpectedConditions.numberOfElementsToBe(By.cssSelector(".btn.btn-info"), 4));
         
-        Thread.sleep(5000);
         List<WebElement> allproducts = driver.findElements(By.cssSelector(".btn.btn-info"));
         System.out.println(allproducts.size());
         for (int i = 0; i < allproducts.size(); i++) {
@@ -63,4 +61,51 @@ public class Explicitwaitpractice {
             System.out.println("Clicked" + i);
         }
     }
+  
+	   
+    
+    @Test 
+    public void login2() {
+ 	   
+ 	  driver.findElement(By.id("username")).sendKeys("rahulshettyacademy");
+ 	  driver.findElement(By.id("password")).sendKeys("Learning@830$3mK2");
+ 	  
+ 	  Select sel = new Select(driver.findElement(By.tagName("select")));
+ 	  sel.selectByValue("consult");
+ 	  
+ 	  
+ 	  driver.findElement(By.xpath("//input[@value ='user']")).click();
+ 	  w.until(ExpectedConditions.visibilityOfElementLocated(By.id("okayBtn")));
+ 	  driver.findElement(By.id("okayBtn")).click();
+ 	  
+ 	  driver.findElement(By.cssSelector(".text-white.termsText")).click();
+ 	  
+ 	  
+ 	  driver.findElement(By.id("signInBtn")).click();
+ 	  
+ 	  w.until(ExpectedConditions.numberOfElementsToBe(By.cssSelector(".btn.btn-info"), 4));
+ 	  List <WebElement> allproducts = driver.findElements(By.cssSelector(".btn.btn-info"));
+ 	  for (int i = 0; i< allproducts.size(); i++) {	  
+ 		 allproducts.get(i).click();	
+ 		 
+ 		 
+ 		
+ 		 
+ 	  }
+ 	  
+ 	  
+ 	  
+ 	  
+ 	  
+ 	  
+    }
+ 	      
+
+
+
+
+
+
 }
+
+
