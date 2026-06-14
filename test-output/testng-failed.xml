@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="WindowsHandles">
+      <class name="FramesAssignment">
         <methods>
-          <include name="windowHandlingDemo"/>
-          <include name="setUp"/>
+          <include name="framesAssignment"/>
+          <include name="setup"/>
         </methods>
-      </class> <!-- WindowsHandles -->
+      </class> <!-- FramesAssignment -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

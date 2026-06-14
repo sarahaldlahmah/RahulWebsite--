@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-06-07T22:21:09 EET" name="Default suite" finished-at="2026-06-07T22:21:12 EET" duration-ms="3142">
+  <suite started-at="2026-06-15T02:14:52 EET" name="Default suite" finished-at="2026-06-15T02:14:54 EET" duration-ms="1829">
     <groups>
     </groups>
-    <test started-at="2026-06-07T22:21:09 EET" name="Default test" finished-at="2026-06-07T22:21:12 EET" duration-ms="3142">
-      <class name="Assignment4">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Assignment4@3da05287]" started-at="2026-06-07T22:21:09 EET" name="setUp" finished-at="2026-06-07T22:21:11 EET" duration-ms="2247" status="PASS">
+    <test started-at="2026-06-15T02:14:52 EET" name="Default test" finished-at="2026-06-15T02:14:54 EET" duration-ms="1829">
+      <class name="FramesAssignment">
+        <test-method is-config="true" signature="setup()[pri:0, instance:FramesAssignment@3da05287]" started-at="2026-06-15T02:14:52 EET" name="setup" finished-at="2026-06-15T02:14:54 EET" duration-ms="1223" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="Assignment4_windowsHandles()[pri:0, instance:Assignment4@3da05287]" started-at="2026-06-07T22:21:11 EET" name="Assignment4_windowsHandles" finished-at="2026-06-07T22:21:12 EET" duration-ms="837" status="PASS">
+        </test-method> <!-- setup -->
+        <test-method signature="framesAssignment()[pri:0, instance:FramesAssignment@3da05287]" started-at="2026-06-15T02:14:54 EET" name="framesAssignment" finished-at="2026-06-15T02:14:54 EET" duration-ms="545" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Assignment4_windowsHandles -->
-      </class> <!-- Assignment4 -->
+        </test-method> <!-- framesAssignment -->
+      </class> <!-- FramesAssignment -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
